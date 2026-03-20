@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#4F6EF7</color>
+    <color name="accent2">#7C3AED</color>
+    <color name="green">#10B981</color>
+    <color name="red">#EF4444</color>
+    <color name="yellow">#F59E0B</color>
+    <color name="orange">#F97316</color>
+    <color name="bg">#F0F2F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface2">#F5F6F8</color>
+    <color name="border">#E2E5EA</color>
+    <color name="text_primary">#18191F</color>
+    <color name="text_secondary">#52576B</color>
+    <color name="text_hint">#9CA3AF</color>
+    <color name="ic_launcher_background">#4F6EF7</color>
+</resources>
