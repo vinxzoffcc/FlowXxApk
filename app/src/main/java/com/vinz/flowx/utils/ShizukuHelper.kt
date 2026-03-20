@@ -3,7 +3,6 @@ package com.vinz.flowx.utils
 import android.content.pm.PackageManager
 import android.util.Log
 import rikka.shizuku.Shizuku
-import rikka.shizuku.ShizukuRemoteProcess
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -12,9 +11,6 @@ object ShizukuHelper {
     private const val TAG = "ShizukuHelper"
     private const val REQUEST_CODE = 100
 
-    /**
-     * Cek apakah Shizuku aktif dan kita punya izin
-     */
     fun isAvailable(): Boolean {
         return try {
             Shizuku.pingBinder() && hasPermission()
@@ -41,15 +37,9 @@ object ShizukuHelper {
         }
     }
 
-    /**
-     * Jalankan command adb shell via Shizuku
-     * Return: Pair(success, output)
-     */
     fun run(command: String): Pair<Boolean, String> {
         return try {
-            val process: Process = Shizuku.newProcess(
-                arrayOf("sh", "-c", command), null, null
-            )
+            val process = Runtime.getRuntime().exec(arrayOf("sh", "-c", command))
             val output = BufferedReader(InputStreamReader(process.inputStream)).readText()
             val exitCode = process.waitFor()
             Pair(exitCode == 0, output.trim())
@@ -59,9 +49,6 @@ object ShizukuHelper {
         }
     }
 
-    /**
-     * Jalankan banyak command sekaligus
-     */
     fun runAll(commands: List<String>): Map<String, Boolean> {
         val results = mutableMapOf<String, Boolean>()
         for (cmd in commands) {
@@ -70,8 +57,6 @@ object ShizukuHelper {
         }
         return results
     }
-
-    // ── MODULE COMMANDS ────────────────────────────────────────────
 
     val CMD_FPS_BOOST = listOf(
         "settings put system peak_refresh_rate 120",
