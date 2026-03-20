@@ -19,6 +19,8 @@ import rikka.shizuku.Shizuku
 
 class MainActivity : AppCompatActivity() {
 
+    private var permissionChecked = false
+
     private val overlayPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
@@ -32,11 +34,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupBottomNav()
-        checkPermissions()
 
-        // Default tab
         if (savedInstanceState == null) {
             loadFragment(BoostFragment())
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!permissionChecked) {
+            permissionChecked = true
+            checkPermissions()
         }
     }
 
@@ -60,20 +68,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkPermissions() {
-        // Minta izin Draw Over Other Apps
         if (!Settings.canDrawOverlays(this)) {
-            val intent = Intent(
-                Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                Uri.parse("package:$packageName")
-            )
-            overlayPermissionLauncher.launch(intent)
+            try {
+                val intent = Intent(
+                    Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:$packageName")
+                )
+                overlayPermissionLauncher.launch(intent)
+            } catch (e: Exception) {
+                // ignore
+            }
         }
 
-        // Cek Shizuku
         try {
-            if (Shizuku.pingBinder()) {
-                // Shizuku aktif
-            }
+            Shizuku.pingBinder()
         } catch (e: Exception) {
             // Shizuku tidak tersedia
         }
