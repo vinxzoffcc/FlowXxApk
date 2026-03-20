@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:text="Game HUD" android:textSize="24sp" android:textStyle="bold"
+            android:textColor="@color/text_primary" android:layout_marginTop="12dp" android:layout_marginBottom="4dp"/>
+        <TextView android:text="Overlay real time di atas game" android:textSize="13sp"
+            android:textColor="@color/text_hint" android:layout_marginBottom="16dp"/>
+
+        <Button android:id="@+id/btn_toggle_hud"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Aktifkan HUD" android:textSize="15sp" android:textStyle="bold"
+            android:backgroundTint="@color/accent" android:layout_marginBottom="16dp"/>
+
+        <TextView android:text="TAMPILKAN" android:textSize="11sp" android:textAllCaps="true"
+            android:textColor="@color/text_hint" android:layout_marginBottom="8dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/bg_card">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="CPU Frequency" android:textSize="13sp" android:textStyle="bold"/>
+                <Switch android:id="@+id/sw_hud_cpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="RAM Usage" android:textSize="13sp" android:textStyle="bold"/>
+                <Switch android:id="@+id/sw_hud_ram" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Baterai" android:textSize="13sp" android:textStyle="bold"/>
+                <Switch android:id="@+id/sw_hud_bat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Suhu" android:textSize="13sp" android:textStyle="bold"/>
+                <Switch android:id="@+id/sw_hud_tmp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="14dp" android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="FPS" android:textSize="13sp" android:textStyle="bold"/>
+                <Switch android:id="@+id/sw_hud_fps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/bg_card_blue"
+            android:padding="14dp" android:layout_marginTop="12dp">
+            <TextView android:text="ℹ️  Cara pakai" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/accent" android:layout_marginBottom="6dp"/>
+            <TextView android:textSize="12sp" android:textColor="@color/text_secondary" android:lineSpacingExtra="4dp"
+                android:text="1. Tap Aktifkan HUD\n2. Widget muncul di layar — seret ke posisi nyaman\n3. Buka game — widget tetap tampil di atas game\n4. Tap X di widget untuk tutup"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
