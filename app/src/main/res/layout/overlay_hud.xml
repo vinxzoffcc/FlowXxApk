@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout HUD floating yang tampil di atas game -->
+<!-- Mirip Meter Info ADV: strip horizontal gelap, icon + nilai berderet -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_overlay_hud"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="6dp"
+    android:gravity="center_vertical">
+
+    <!-- CPU Freq -->
+    <LinearLayout
+        android:id="@+id/container_cpu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingEnd="8dp">
+        <TextView
+            android:text="⬡"
+            android:textSize="10sp"
+            android:textColor="#66FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"/>
+        <TextView
+            android:id="@+id/tv_cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:text="2.30 GHz"/>
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View android:layout_width="1dp" android:layout_height="12dp"
+        android:background="#22FFFFFF" android:layout_marginEnd="8dp"/>
+
+    <!-- RAM -->
+    <LinearLayout
+        android:id="@+id/container_ram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingEnd="8dp">
+        <TextView
+            android:text="▣"
+            android:textSize="10sp"
+            android:textColor="#66FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"/>
+        <TextView
+            android:id="@+id/tv_ram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:text="49%"/>
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View android:layout_width="1dp" android:layout_height="12dp"
+        android:background="#22FFFFFF" android:layout_marginEnd="8dp"/>
+
+    <!-- Battery -->
+    <LinearLayout
+        android:id="@+id/container_bat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingEnd="8dp">
+        <TextView
+            android:text="▮"
+            android:textSize="10sp"
+            android:textColor="#66FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"/>
+        <TextView
+            android:id="@+id/tv_bat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:text="85%"/>
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View android:layout_width="1dp" android:layout_height="12dp"
+        android:background="#22FFFFFF" android:layout_marginEnd="8dp"/>
+
+    <!-- Temperature -->
+    <LinearLayout
+        android:id="@+id/container_tmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingEnd="8dp">
+        <TextView
+            android:text="◈"
+            android:textSize="10sp"
+            android:textColor="#66FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"/>
+        <TextView
+            android:id="@+id/tv_tmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:text="36°C"/>
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View android:layout_width="1dp" android:layout_height="12dp"
+        android:background="#22FFFFFF" android:layout_marginEnd="8dp"/>
+
+    <!-- FPS -->
+    <LinearLayout
+        android:id="@+id/container_fps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:text="FPS"
+            android:textSize="8sp"
+            android:textColor="#66FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:fontFamily="sans-serif-condensed"/>
+        <TextView
+            android:id="@+id/tv_fps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#4F6EF7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:text="90"/>
+    </LinearLayout>
+
+</LinearLayout>
